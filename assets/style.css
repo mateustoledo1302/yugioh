@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Press Start 2P", cursive;
+  user-select: none;
+}
+
+body {
+  cursor: url(../assets/cursor/yugicursor.png), default;
+}
+
+button, a, img:hover, button:hover, a:hover {
+  cursor: url(../assets/cursor/yamiyugicursorGLOW.png), auto;
+}
+
+.bg-video {
+  position: absolute;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bg-video .video {
+  height: 100vh;
+}
+
+.bg-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  height: 100vh;
+}
+
+.container__letf {
+  width: 35%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.container__right {
+  width: 65%;
+}
+
+.frame {
+  border: 3px solid #000;
+  border-radius: 5px;
+}
+
+.score_box {
+  background: #fff;
+  padding: 2rem;
+}
+
+.card_details {
+  background: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  width: 100%;
+}
+
+#card-name {
+  font-size: 0.8rem;
+}
+
+#card-type {
+  font-size: 1rem;
+}
+
+.card-box__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.3rem;
+}
+
+.card-versus__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 300px;
+}
+
+.versus-top,
+.versus-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.versus-bottom {
+  margin-top: 1rem;
+}
+
+#next-duel {
+  display: none;
+}
+
+.card-box {
+  height: 9rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-infield {
+  height: 11.2rem;
+  width: 8.4rem;
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+}
+
+.card-infield img {
+  height: 100%;
+  width: 100%;
+}
+
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover{
+  transform: scale(1.2);
+}
+
+.rpgui-button {
+  /* hide button default stuff */
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  overflow: hidden;
+  outline: none;
+
+  /* background */
+  background: url("../assets/rpg/button.png") no-repeat no-repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+  background-size: 100% 100%;
+
+  /* font size */
+  font-size: 1em;
+
+  /* default size and display */
+  max-width: 100%;
+  min-width: 140px;
+  height: 60px;
+  display: inline-block;
+
+  /* padding */
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+/* button hover */
+.rpgui-button.hover,
+.rpgui-button:hover {
+  background-image: url("../assets/rpg/button-hover.png");
+}
+
+/* button clicked */
+.rpgui-button.down,
+.rpgui-button:active {
+  background-image: url("../assets/rpg/button-down.png");
+}
+
+/* golden button stuff */
+.rpgui-button.golden p {
+  display: inline-block;
+}
+
+/* golden button style */
+.rpgui-button.golden {
+  /* hide button default stuff */
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  overflow: hidden;
+  outline: none;
+
+  /* background */
+  background: url("../assets/rpg/button-golden.png") no-repeat no-repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+  background-size: 100% 80%;
+
+  /* default size and display */
+  max-width: 100%;
+  min-width: 140px;
+  height: 60px;
+  display: inline-block;
+
+  /* padding */
+  padding-top: 5px;
+  padding-left: 35px;
+  padding-right: 35px;
+  overflow: visible;
+}
+
+/* button hover */
+.rpgui-button.golden.hover,
+.rpgui-button.golden:hover {
+  background-image: url("../assets/rpg/button-golden-hover.png");
+}
+
+/* button clicked */
+.rpgui-button.golden.down,
+.rpgui-button.golden:active {
+  background-image: url("../assets/rpg/button-golden-down.png");
+}
+
+.rpgui-button.golden:before {
+  white-space: nowrap;
+  display: inline-block;
+  content: "";
+  width: 34px;
+  display: block;
+  height: 110%;
+  background: transparent url("../assets/rpg/button-golden-left.png") no-repeat right center;
+  background-size: 100% 100%;
+  margin: 0 0 0 0;
+  left: 0px;
+  float: left;
+  margin-left: -46px;
+  margin-top: -5%;
+}
+
+.rpgui-button.golden:after {
+  white-space: nowrap;
+  display: block;
+  content: "";
+  width: 34px;
+  height: 110%;
+  background: transparent url("../assets/rpg/button-golden-right.png") no-repeat left center;
+  background-size: 100% 100%;
+  margin: 0 0 0 0;
+  right: 0px;
+  float: right;
+  margin-right: -46px;
+  margin-top: -5%;
+}
+
+.rpgui-container {
+  /* position style and default z */
+  position: fixed;
+  z-index: 10;
+
+  overflow: show;
+}
+
+/* game div with background image*/
+.framed {
+  /* border */
+  border-style: solid;
+  border-image-source: url("../assets/rpg/border-image.png");
+  border-image-repeat: repeat;
+  border-image-slice: 6 6 6 6;
+  border-image-width: 18px;
+  border-width: 15px;
+  padding: 12px;
+
+  /* internal border */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  /* background */
+  background: url("../assets/rpg/background-image.png") repeat repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}
+
+/* game div with golden background image*/
+.framed-golden {
+  /* border */
+  border-style: solid;
+  border-image-source: url("../assets/rpg/border-image-golden.png");
+  border-image-repeat: repeat;
+  border-image-slice: 4 4 4 4;
+  border-image-width: 18px;
+  border-width: 15px;
+  padding: 12px;
+
+  /* internal border */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  /* background */
+  background: url("../assets/rpg/background-image-golden.png") repeat repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}
+
+/* game div with golden2 background image*/
+.framed-golden-2 {
+  /* border */
+  border-style: solid;
+  border-image-source: url("../assets/rpg/border-image-golden2.png");
+  border-image-repeat: repeat;
+  border-image-slice: 8 8 8 8;
+  border-image-width: 18px;
+  border-width: 15px;
+  padding: 12px;
+
+  /* internal border */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  /* background */
+  background: url("../assets/rpg/background-image-golden2.png") repeat repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}
+
+/* game div with soft grey background image*/
+.framed-grey {
+  position: relative;
+
+  /* border */
+  border-style: solid;
+  border-image-source: url("../assets/rpg/border-image-grey.png");
+  border-image-repeat: repeat;
+  border-image-slice: 3 3 3 3;
+  border-image-width: 7px;
+  border-width: 7px;
+  padding: 12px;
+
+  /* internal border */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  /* background */
+  background: url("../assets/rpg/background-image-grey.png") repeat repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+}
